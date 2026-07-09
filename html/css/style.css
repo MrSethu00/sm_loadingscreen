@@ -1,0 +1,311 @@
+/* RESET & BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Impact', 'Arial Black', 'Helvetica', sans-serif;
+    background-color: #0a0a0a;
+    overflow: hidden;
+    height: 100vh;
+    width: 100vw;
+    color: #f5e7d3;
+    user-select: none;
+}
+
+/* YOUTUBE BACKGROUND */
+.video-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.video-bg iframe {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100vw;
+    height: 100vh;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    border: none;
+}
+
+/* OVERLAY */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+    backdrop-filter: blur(2px);
+}
+
+/* MAIN LOADING CONTAINER */
+.loading-wrapper {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+    padding: 0 5vw;
+    pointer-events: none;
+}
+
+/* LEFT SIDE - LOGO & TITLE */
+.brand-left {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    width: 45%;
+    text-shadow: 4px 4px 10px rgba(0, 0, 0, 0.9);
+}
+
+.server-logo {
+    width: 200px;
+    height: auto;
+    filter: drop-shadow(0 0 15px #b8860b);
+    margin-bottom: 20px;
+    background: rgba(20, 20, 20, 0.3);
+    padding: 10px 20px;
+    border-radius: 40px 12px 40px 12px;
+    border-left: 6px solid #d4af37;
+    border-bottom: 6px solid #8b5a2b;
+    backdrop-filter: blur(4px);
+    background: rgba(0, 0, 0, 0.2);
+    display: inline-block;
+}
+
+.server-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 260px;
+}
+
+.logo-text {
+    font-size: 3.8rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: #f5c542;
+    text-shadow: 0 0 20px #b8860b, 0 0 40px #5a3e1b;
+    line-height: 1;
+    font-weight: 900;
+    background: linear-gradient(45deg, #f5d742, #c49a2b);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 5px;
+}
+
+.server-name {
+    font-size: 1.8rem;
+    letter-spacing: 8px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 20px #d4af37, 0 0 40px #5a3e1b;
+    font-weight: 900;
+    background: linear-gradient(45deg, #ffffff, #d4af37);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 10px;
+    padding: 5px 0;
+    border-top: 2px solid rgba(212, 175, 55, 0.3);
+    border-bottom: 2px solid rgba(212, 175, 55, 0.3);
+}
+
+.sub-motto {
+    font-size: 1.5rem;
+    color: #d4b48c;
+    letter-spacing: 8px;
+    font-weight: 300;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px 20px;
+    border-radius: 30px;
+    border: 1px solid #7a5f3a;
+    backdrop-filter: blur(2px);
+}
+
+/* RIGHT SIDE - LOADING INFO */
+.info-right {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: center;
+    text-align: right;
+    pointer-events: none;
+}
+
+.quote-block {
+    background: rgba(10, 10, 10, 0.7);
+    padding: 25px 30px;
+    border-radius: 20px 4px 20px 4px;
+    backdrop-filter: blur(6px);
+    border-right: 6px solid #b8860b;
+    border-top: 6px solid #6b4c2a;
+    margin-bottom: 30px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+.quote-text {
+    font-size: 1.2rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #ebd6b0;
+    line-height: 1.5;
+    text-transform: uppercase;
+    font-family: 'Arial Black', sans-serif;
+}
+
+.quote-text i {
+    color: #d4af37;
+    margin: 0 6px;
+}
+
+.quote-author {
+    margin-top: 10px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #f5c542;
+    letter-spacing: 3px;
+    text-shadow: 0 0 10px #b8860b;
+}
+
+/* LOADING BAR */
+.loading-section {
+    width: 100%;
+    margin-top: 10px;
+}
+
+.loading-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: #c9b28b;
+    margin-bottom: 6px;
+    font-family: 'Courier New', monospace;
+}
+
+.progress-track {
+    width: 100%;
+    height: 14px;
+    background: #1e1a14;
+    border-radius: 40px;
+    box-shadow: inset 0 0 12px #0a0a0a;
+    border: 1px solid #4d3a22;
+    overflow: hidden;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, #c49a2b, #f5d742, #b8860b);
+    border-radius: 40px;
+    box-shadow: 0 0 20px #d4af37;
+    transition: width 0.5s ease;
+}
+
+.status-text {
+    margin-top: 14px;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: #d4b48c;
+    font-family: 'Segoe UI', monospace;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 16px;
+    border-radius: 40px;
+    display: inline-block;
+    backdrop-filter: blur(2px);
+}
+
+.status-text i {
+    color: #f5c542;
+    margin-right: 10px;
+}
+
+.stamp {
+    margin-top: 30px;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #b8860b;
+    letter-spacing: 6px;
+    opacity: 0.7;
+    border-top: 1px solid #4d3a22;
+    padding-top: 15px;
+    width: 100%;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.stamp i {
+    margin-right: 10px;
+    color: #a67c3b;
+}
+
+/* RESPONSIVE */
+@media (max-width: 860px) {
+    .brand-left {
+        width: 50%;
+    }
+    .info-right {
+        width: 45%;
+    }
+    .logo-text {
+        font-size: 2.8rem;
+    }
+    .server-name {
+        font-size: 1.4rem;
+        letter-spacing: 4px;
+    }
+    .quote-text {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 660px) {
+    .loading-wrapper {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem;
+    }
+    .brand-left,
+    .info-right {
+        width: 100%;
+        align-items: center;
+        text-align: center;
+    }
+    .info-right {
+        align-items: center;
+        text-align: center;
+    }
+    .quote-block {
+        border-right: none;
+        border-bottom: 6px solid #b8860b;
+    }
+    .stamp {
+        text-align: center;
+    }
+    .server-logo {
+        width: 140px;
+    }
+    .server-name {
+        font-size: 1.2rem;
+        letter-spacing: 3px;
+    }
+}
